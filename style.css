@@ -1,0 +1,177 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY + BACKGROUND ORNAMEN */
+body {
+    font-family: "Arial", serif;
+    background: linear-gradient(135deg, #032054, #053ca2);
+    color: #08156f;
+
+    min-height: 100vh;
+    padding: 30px;
+
+    /* penting */
+    display: block;
+    overflow-y: auto;
+}
+
+/* ORNAMEN BULAT DI BACKGROUND */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0,123,255,0.1);
+    z-index: 0;
+}
+
+body::before {
+    width: 300px;
+    height: 300px;
+    top: -80px;
+    left: -80px;
+}
+
+body::after {
+    width: 250px;
+    height: 250px;
+    bottom: -80px;
+    right: -80px;
+}
+
+/* CONTAINER UTAMA */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.6s ease;
+}
+
+/* ANIMASI MASUK */
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* HEADING */
+h1, h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+/* INPUT */
+input, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,123,255,0.3);
+}
+
+/* BUTTON */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #28a745, #34d058);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* GRID KARTU */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* CARD KANDIDAT */
+.card {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border: 1px solid #007bff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ORNAMEN DI CARD */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    top: 0;
+    left: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.card button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - E-Pemilihan Olimpiade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login E-Pemilihan Olimpiade Sekolah</h1>
+        <form id="loginForm">
+            <!-- Pilih role: Siswa atau Admin -->
+            <label for="role">Pilih Role:</label>
+            <select id="role" required>
+                <option value="siswa">Siswa</option>
+                <option value="admin">Admin</option>
+            </select>
+            
+            <!-- Input untuk Siswa (NIK) -->
+            <div id="siswaFields">
+                <label for="nisn">NISN (Nomor Induk Siswa Nasional):</label>
+                <input type="text" id="nik" placeholder="Masukkan NISN Anda">
+            </div>
+            
+            <!-- Input untuk Admin (Username & Password) -->
+            <div id="adminFields" style="display: none;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Masukkan Username">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Masukkan Password">
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMessage" style="color: red;"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
